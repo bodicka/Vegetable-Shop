@@ -14,6 +14,19 @@
   <img src="https://img.icons8.com/?size=100&id=g9mmSxx3SwAI&format=png&color=000000" height="40" />
   <img width="12" />
 </div>
+<br>
+<div align="left">
+      <h4 align="left">1.React-Router-Dom-<img align="center" gap="10" src="https://brandeps.com/logo-download/R/React-Router-logo-vector-01.svg" alt="router-logo" height="40" /><img width="12" /></h4>
+      <hr>
+      <p>
+        React Router - это библиотека для создания навигации в React приложениях. Она позволяет определять маршруты и компоненты, которые должны отображаться в зависимости от текущего URL.В этом проекте используется навигация для элементов в NavBar таких как Home,          Shop, и самой корзины.
+      </p>
+  <div align="left">
+    <img width="450" height="250" src="https://sun9-28.userapi.com/impg/RB_dyB1gwurNsueuXPHDdE-fJl8yL27yU_Yv9Q/g_c1RVNr5TM.jpg?size=604x380&quality=96&sign=10df8270ea7f367765df75071d77ec30&type=album" />
+  </div>
+</div>
+
+
 
 
 
