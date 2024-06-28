@@ -1,4 +1,4 @@
-<h1 align="center">Vegetable-Shop :sweet_potato::eggplant::tomato:</h1>
+<h1 align="center">Vegetable-Shop :eggplant::tomato:</h1>
 <p>Vegetable-Shop - это веб-приложение, которое предоставляет возможность покупки свежих и качественных овощей прямо из дома. Пользователи могут просматривать ассортимент овощей, добавлять их в корзину покупок.</p>
 <div align="center">
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2w2ZjhsYXd3ZXVsaDVia2duNjFocXN0cGxlem04ZWV2bXh3ZWdsdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TRN3IfjWkPGebBwVgP/giphy.gif" alt="gif"/>
