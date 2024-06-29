@@ -159,6 +159,7 @@ export default cartSlice.reducer;
 <div align="center">
   <img src="https://media2.giphy.com/media/vAMDicW9CsV2l9g8Mm/giphy.webp" alt="gifyse" />
 </div>
+<h1>Xочу вас поблагодарить за внимание.❤️</h1>
 
 
 
