@@ -159,7 +159,108 @@ export default cartSlice.reducer;
 <div align="center">
   <img src="https://media2.giphy.com/media/vAMDicW9CsV2l9g8Mm/giphy.webp" alt="gifyse" />
 </div>
-<h1>Xочу вас поблагодарить за внимание.❤️</h1>
+<div align="left">
+  <p>В компоненте Produx.jsx используется Redux для управления состоянием корзины.</p>
+  <ul>
+    <li>useDispatch - это хук, который предоставляется пакетом react-redux. Он позволяет получить доступ к функции dispatch, которая используется для отправки действий (action) в Redux.
+    useSelector - это другой хук, который</li>
+    <li>useSelector - это другой хук, который предоставляется пакетом react-redux. Он позволяет получить доступ к состоянию Redux. В данном случае, он используется для получения общего количества элементов и общей суммы в корзине.</li>
+    <li>dispatch(addToCart(tempProduct)) - это вызов функции addToCart (CartSlice.js:16:5-40:6), которая является частью cartSlice (reducer). Эта функция добавляет товар в корзину.</li>
+    <li>dispatch(getCartTotal()) - это вызов функции getCartTotal (CartSlice.js:56:5-61:6), которая также является частью cartSlice. Эта функция вычисляет общую сумму и количество товаров в корзине.</li>
+    <li>dispatch(getCartTotal()) - это вызов функции getCartTotal (CartSlice.js:56:5-61:6), которая также является частью cartSlice. Эта функция вычисляет общую сумму и количество товаров в корзине.</li>
+    <li>navigate("/cart") - это вызов функции navigate, которая используется для перехода на страницу корзины.</li>
+  </ul>
+  <p>В целом, Redux используется для управления состоянием корзины, включая добавление товаров, получение общей суммы и количества товаров, и переход на страницу корзины.</p>
+</div>
+
+```js
+import { useState } from "react";
+import { products } from "../data/Data";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { addToCart } from "../redux/CartSlice";
+
+export default function Produx() {
+  const dispatch = useDispatch();
+
+  const [qty, setQty] = useState(1);
+
+  const navigate = useNavigate();
+
+  const [menuItems, setMenuItems] = useState(products);
+
+  const fillteritem = (category) => {
+    const newItem = products.filter((item) => item.category === category);
+    setMenuItems(newItem);
+
+    if (category === "all") {
+      setMenuItems(products);
+      return;
+    }
+  };
+
+  const handleAddToCart = (product) => {
+    let totalPrice = qty * product.price;
+    const tempProduct = {
+      ...product,
+      quantity: qty,
+      totalPrice,
+    };
+    dispatch(addToCart(tempProduct));
+    navigate("/cart");
+  };
+```
+
+```js
+    <button onClick={() => handleAddToCart(el)} className="btn border border-secondary rounded-pill px-3 text-primary">
+      <i className="fa fa-shopping-bag me-2 text-primary"></i>{" "}
+        Add to cart
+    </button>
+```
+
+<div align="left">
+  <p>В компоненте Cart.jsx используется Redux для управления состоянием корзины.</p>
+  <ul>
+    <li>useDispatch и useSelector - это хуки, которые предоставляются пакетом react-redux. useDispatch позволяет получить доступ к функции dispatch, которая используется для отправки действий (action) в Redux. useSelector позволяет получить доступ к состоянию       Redux.</li>
+    <li>dispatch(getCartTotal()) - это вызов функции getCartTotal (CartSlice.js:56:5-61:6), которая является частью cartSlice (reducer). Эта функция вычисляет общую сумму и количество товаров в корзине.</li>
+    <li>dispatch(removeItem({ id: itemId })) - это вызов функции removeItem (CartSlice.js:51:5-55:6), которая также является частью cartSlice. Эта функция удаляет товар из корзины.</li>
+    <li>dispatch(updateQuantity({ id: cartProductId, quantity: newQty })) - это вызов функции updateQuantity (CartSlice.js:41:5-50:6), которая также является частью cartSlice. Эта функция обновляет количество товара в корзине.</li>
+    <li>useSelector((state) => state.cart) - это вызов функции useSelector, которая позволяет получить доступ к состоянию Redux. В данном случае, она получает состояние cart.</li>
+  </ul>
+  <p>В целом, Redux используется для управления состоянием корзины, включая добавление товаров, удаление товаров, обновление количества товаров и вычисление общей суммы и количества товаров.</p>
+</div>
+
+```js
+import { useDispatch, useSelector } from "react-redux";
+import { getCartTotal, removeItem, updateQuantity } from "../../redux/CartSlice";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+
+export default function Cart() {
+  const dispatch = useDispatch();
+
+  const increaseQty = (cartProductId, currentQty) => {
+    const newQty = currentQty + 1;
+    dispatch(updateQuantity({ id: cartProductId, quantity: newQty }));
+  };
+
+  const decreaseQty = (cartProductId, currentQty) => {
+    const newQty = Math.max(currentQty - 1, 1);
+    dispatch(updateQuantity({ id: cartProductId, quantity: newQty }));
+  };
+
+  const { data: cartProducts, totalAmounts, deliveryCharge } = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    dispatch(getCartTotal());
+  }, [useSelector((state) => state.cart)]);
+
+  const handleRemoveItem = (itemId) => {
+    dispatch(removeItem({ id: itemId }));
+  };
+
+```
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.kapwing.com/videos/668137155c9f5eb8bc4c5427)
 
 
 
