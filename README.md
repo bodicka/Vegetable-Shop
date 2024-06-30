@@ -1,3 +1,7 @@
+<h1>Видио всего проекта по клику ↓↓↓</h1>
+
+[![Watch the video](https://i.postimg.cc/mgMZcbJY/49.png)](https://www.kapwing.com/videos/668137155c9f5eb8bc4c5427)
+
 <h1 align="center">Vegetable-Shop :eggplant::tomato:</h1>
 <p>Vegetable-Shop - это веб-приложение, которое предоставляет возможность покупки свежих и качественных овощей прямо из дома. Пользователи могут просматривать ассортимент овощей, добавлять их в корзину покупок.</p>
 <div align="center">
@@ -260,7 +264,8 @@ export default function Cart() {
   };
 
 ```
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.kapwing.com/videos/668137155c9f5eb8bc4c5427)
+
+<h1>Xочу вас поблагодарить за внимание.❤️</h1>
 
 
 
